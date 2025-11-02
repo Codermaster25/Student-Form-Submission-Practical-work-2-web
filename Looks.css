@@ -1,0 +1,178 @@
+ body {
+      background: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .paper {
+      background: white;
+      width: 800px;
+      min-height: 1000px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+ h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+.photo-upload {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+.photo-upload label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input[type="file"] {
+  font-size: 1rem;
+}
+
+.photo-preview {
+  margin-top: 1rem;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.photo-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fefefe;
+}
+
+.user-info h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.user-info label {
+  font-weight: bold;
+}
+
+.user-info input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; 
+  margin-top: 1rem;
+}
+
+.button-group button {
+  padding: 0.5rem 1rem;
+  background-color: #0078D4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-group button:hover {
+  background-color: #005a9e;
+}
+
+.gender-choice {
+  margin-bottom: 1.5rem;
+}
+
+.gender-choice label {
+  text-align: center;
+  margin-left: 1rem;
+  display: inline-block;
+  margin-right: 1.5rem;
+  font-weight: normal;
+}
+
+.dob-field {
+  margin-bottom: 1.5rem;
+}
+
+.dob-field input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#level {
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+#Department {
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+#phone {
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+.line-divider {
+  border-top: 2px solid #333;
+  margin: 2rem 0;
+}
+
+#state {
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+#city {
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+#postcode {
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+.big-alert {
+  font-size: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 3px solid #28a745;
+  box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+}

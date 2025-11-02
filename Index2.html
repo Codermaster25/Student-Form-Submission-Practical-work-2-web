@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Forum</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="Stylesheet" href="Looks.css"/>
+
+</head>
+<body>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"crossorigin="anonymous">
+
+</script>
+
+<div class="paper">
+    <h1>Politeknik kuching sarawak</h1>
+    <h2>Student Registration Forum</h2>
+
+<!-- Photo Upload + Preview -->
+<div class="photo-upload">
+  <label for="userPhoto">Upload your photo:</label><br />
+  <input type="file" id="userPhoto" accept="image/*" required/>
+  <div class="photo-preview" id="photoPreview">
+    <p>No photo uploaded</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById('userPhoto').addEventListener('change', function () {
+    const file = this.files[0];
+    const preview = document.getElementById('photoPreview');
+
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        preview.innerHTML = `<img src="${e.target.result}" alt="User Photo" />`;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      preview.innerHTML = `<p>No photo uploaded</p>`;
+    }
+  });
+</script>
+
+<!-- User Info Input Section -->
+<div class="user-info">
+  <h2>User Information</h2>
+  <form>
+    <label for="studentName">Student name:</label><br />
+<input type="text" id="studentName" name="studentName" placeholder="Enter student name" required /><br /><br />
+
+<label for="fatherName">Father's name:</label><br />
+<input type="text" id="fatherName" name="fatherName" placeholder="Enter father's name" required/><br /><br />
+
+<label for="motherName">Mother's name:</label><br />
+<input type="text" id="motherName" name="motherName" placeholder="Enter mother's name" required/><br /><br />
+
+<div class="gender-choice">
+  <label><strong>Gender:</strong></label><br />
+  <label>
+    <input type="radio" name="gender" value="Male" /> Male
+  </label>
+  <label>
+    <input type="radio" name="gender" value="Female" /> Female
+  </label>
+</div>
+
+<label for="dob"><strong>Date of Birth:</strong></label><br />
+<input type="date" id="dob" name="dob" required />
+
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email" placeholder="Enter your email" required /><br /><br />
+
+   <div class="level-selection">
+  <label for="level" class="form-label"><strong>Level:</strong></label>
+  <select id="level" name="level" class="form-select" required>
+    <option value=""> -- Select Level -- </option>
+    <option value="Diploma">Diploma</option>
+    <option value="Degree">Degree</option>
+    <option value="Master">Master</option>
+    <option value="PHD">PHD</option>
+  </select>
+</div>
+
+     <div class="Department-selection">
+  <label for="Department" class="form-label"><strong>Department</strong></label>
+  <select id="Department" name="Department" class="form-select" required>
+    <option value=""> -- Select Department -- </option>
+    <option value="JTMK">JTMK</option>
+    <option value="JKE">JKE</option>
+    <option value="JKA">JKA</option>
+     <option value="JKM">JKM</option>
+    <option value="JP">JP</option>
+  </select>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <label for="phone" class="form-label">Phone Number:</label>
+    <input type="tel" id="phone" class="form-control" placeholder="Enter your Phone Number" required/>
+  </div>
+</div>
+
+<div class="line-divider"></div>
+
+<div class="State-selection">
+  <label for="state" class="form-label"><strong>State:</strong></label>
+  <select id="state" name="state" class="form-select" required>
+    <option value="">-- Select State --</option>
+    <option value="Johor">Johor</option>
+    <option value="Kedah">Kedah</option>
+    <option value="Kelantan">Kelantan</option>
+    <option value="Melaka">Melaka</option>
+    <option value="Negeri Sembilan">Negeri Sembilan</option>
+    <option value="Pahang">Pahang</option>
+    <option value="Perak">Perak</option>
+    <option value="Perlis">Perlis</option>
+    <option value="Pulau Pinang">Pulau Pinang</option>
+    <option value="Selangor">Selangor</option>
+    <option value="Terengganu">Terengganu</option>
+    <option value="Sabah">Sabah</option>
+    <option value="Sarawak">Sarawak</option>
+    <option value="Kuala Lumpur">Kuala Lumpur (Wilayah Persekutuan)</option>
+    <option value="Putrajaya">Putrajaya (Wilayah Persekutuan)</option>
+    <option value="Labuan">Labuan (Wilayah Persekutuan)</option>
+  </select>
+</div>
+
+<div class="city-selection">
+  <label for="city" class="form-label"><strong>City:</strong></label>
+  <select id="city" name="city" class="form-select" required>
+    <option value="">-- Select City --</option>
+    <option value="Kuala Lumpur">Kuala Lumpur</option>
+    <option value="George Town">George Town</option>
+    <option value="Ipoh">Ipoh</option>
+    <option value="Johor Bahru">Johor Bahru</option>
+    <option value="Shah Alam">Shah Alam</option>
+    <option value="Petaling Jaya">Petaling Jaya</option>
+    <option value="Subang Jaya">Subang Jaya</option>
+    <option value="Seremban">Seremban</option>
+    <option value="Melaka City">Melaka City</option>
+    <option value="Alor Setar">Alor Setar</option>
+    <option value="Kota Bharu">Kota Bharu</option>
+    <option value="Kuala Terengganu">Kuala Terengganu</option>
+    <option value="Kuantan">Kuantan</option>
+    <option value="Kota Kinabalu">Kota Kinabalu</option>
+    <option value="Iskandar Puteri">Iskandar Puteri</option>
+    <option value="Seberang Perai">Seberang Perai</option>
+    <option value="Penang Island">Penang Island</option>
+    <option value="Sungai Petani">Sungai Petani</option>
+    <option value="Kuching">Kuching</option>
+    <option value="Miri">Miri</option>
+    <option value="Bintulu">Bintulu</option>
+    <option value="Labuan">Labuan</option>
+    <option value="Putrajaya">Putrajaya</option>
+  </select>
+</div>
+
+<div class="postcode-input">
+  <label for="postcode" class="form-label"><strong>Postcode:</strong></label>
+  <input type="text" id="postcode" name="postcode" class="form-control" placeholder="e.g. 93300" required />
+</div>
+
+<script>
+  const postcodePrefixes = {
+    "Johor": "80",
+    "Kedah": "05",
+    "Kelantan": "15",
+    "Melaka": "75",
+    "Negeri Sembilan": "70",
+    "Pahang": "25",
+    "Perak": "30",
+    "Perlis": "01",
+    "Pulau Pinang": "10",
+    "Selangor": "40",
+    "Terengganu": "20",
+    "Sabah": "88",
+    "Sarawak": "93",
+    "Kuala Lumpur": "50",
+    "Putrajaya": "62",
+    "Labuan": "87"
+  };
+
+  document.getElementById('state').addEventListener('change', function () {
+    const selectedState = this.value;
+    const postcodeInput = document.getElementById('postcode');
+
+    if (postcodePrefixes[selectedState]) {
+      postcodeInput.value = postcodePrefixes[selectedState] + "000";
+    } else {
+      postcodeInput.value = "";
+    }
+  });
+</script>
+
+    <script>
+    input.addEventListener('blur', function () {
+      this.value = this.value.toUpperCase();
+    });
+   </script>
+
+<script>
+  const inputs = document.querySelectorAll('.user-info input');
+
+  inputs.forEach((input, index) => {
+    // Move to next field on Enter
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const next = inputs[index + 1];
+        if (next) {
+          next.focus();
+        } else {
+          document.querySelector('.user-info button').focus();
+        }
+      }
+    });
+    });
+</script>
+
+<div class="line-divider"></div>
+
+<div class="button-group">
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+</div>
+
+<div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title" id="submitModalLabel">Form Submitted</h5>
+      </div>
+      <div class="modal-body">
+        ✅ Your form has been submitted successfully!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // prevent actual submission
+
+    // Show Bootstrap modal
+    const modal = new bootstrap.Modal(document.getElementById('submitModal'));
+    modal.show();
+
+    form.reset(); // optional: reset form
+  });
+</script>
+
+<script>
+  const nameFields = ['studentName', 'fatherName', 'motherName'];
+
+  nameFields.forEach(id => {
+    const input = document.getElementById(id);
+    input.addEventListener('blur', function () {
+      this.value = this.value.toUpperCase();
+    });
+  });
+</script>
+
+
+</div>
+</body>
+</html>
+
